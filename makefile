@@ -1,25 +1,24 @@
 OPENCV_INC_PATH='/usr/local/include'
 OPENCV_LIB_PATH='/usr/local/lib'
 
-OPENCV_DEP_LIB+=-lopencv_calib3d.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_contrib.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_core.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_features2d.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_flann.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_gpu.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_highgui.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_imgproc.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_legacy.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_ml.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_nonfree.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_objdetect.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_ocl.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_photo.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_stitching.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_superres.2.4.11 
+OPENCV_DEP_LIB+=-lopencv_calib3d 
+OPENCV_DEP_LIB+=-lopencv_contrib 
+OPENCV_DEP_LIB+=-lopencv_core 
+OPENCV_DEP_LIB+=-lopencv_features2d 
+OPENCV_DEP_LIB+=-lopencv_flann 
+OPENCV_DEP_LIB+=-lopencv_gpu 
+OPENCV_DEP_LIB+=-lopencv_highgui 
+OPENCV_DEP_LIB+=-lopencv_imgproc 
+OPENCV_DEP_LIB+=-lopencv_legacy 
+OPENCV_DEP_LIB+=-lopencv_ml 
+OPENCV_DEP_LIB+=-lopencv_objdetect 
+OPENCV_DEP_LIB+=-lopencv_ocl 
+OPENCV_DEP_LIB+=-lopencv_photo 
+OPENCV_DEP_LIB+=-lopencv_stitching 
+OPENCV_DEP_LIB+=-lopencv_superres 
 OPENCV_DEP_LIB+=-lopencv_ts 
-OPENCV_DEP_LIB+=-lopencv_video.2.4.11 
-OPENCV_DEP_LIB+=-lopencv_videostab.2.4.11
+OPENCV_DEP_LIB+=-lopencv_video 
+OPENCV_DEP_LIB+=-lopencv_videostab
 
 TARGET = RansacCurveFitting
 
@@ -38,7 +37,7 @@ all:  $(TARGET)
 $(TARGET): $(OBJECTS)
 	@echo 'Building $(TARGET)='
 	@echo $(CXX) -o $(TARGET) $(OBJECTS) $(LIBS) 
-	$(CXX) -o $(TARGET) $(OBJECTS) $(LIBS) -framework OpenGL -framework GLUT
+	$(CXX) -o $(TARGET) $(OBJECTS) $(LIBS) -IOpenGL -IGLUT
 	@echo 'Building Finished:'
 
 clean:
